@@ -29,20 +29,24 @@ const tabImg = [
     "url('assets/smilley/smiley-13.png')",
     "url('assets/smilley/smiley-14.png')",
     "url('assets/smilley/smiley-15.png')"
-]
+];
 
-const card = document.getElementById("card")
-const placeForImg = document.getElementById("sizer")
-const emplacementImg = document.getElementById("card")
-const backImg = document.querySelector(".back")
+const card = document.getElementById("card");
+const placeForImg = document.getElementById("sizer");
+const emplacementImg = document.getElementById("card");
+const backImg = document.querySelector(".back");
 const boutonAEffacer = document.getElementById("ButtonToDelete");
 const bouttonInit = document.getElementById("BoutonInitialiser");
 const boutonPlacer = document.getElementById("BoutonPlacer");
-const prenom = document.querySelector(".prenom")
-const nom = document.querySelector(".nom")
-const selectNumber = document.getElementById("numberSelect")
-const optionSelect = document.querySelector("#numberSelect option")
+const prenom = document.querySelector(".prenom");
+const nom = document.querySelector(".nom");
+const selectNumber = document.getElementById("numberSelect");
+const options = selectNumber.options;
 
+
+for (let option of options) {
+    console.log(option.textContent)
+}
 
 
 // console.log(placeForImg)
@@ -57,13 +61,14 @@ const optionSelect = document.querySelector("#numberSelect option")
 
 
 
-// boutonAEffacer.remove()
+boutonAEffacer.remove()
 
-boutonAEffacer.addEventListener("click", function( event ) {
-    card.classList.toggle('flip');
-});
+// boutonAEffacer.addEventListener("click", function( event ) {
+//     card.classList.toggle('flip');
+// });
 
 function addCard () {
+    for (let i = 0; i < 11; i++){
     let placeForImg = document.getElementById("sizer")
     let card = document.createElement("div")
     card.setAttribute("class", "flipcard h")
@@ -84,37 +89,57 @@ function addCard () {
     backgroundImg.appendChild(prenom)
     // console.log(card)
     placeForImg.appendChild(card)
-    
-    const nbLignes = document.querySelectorAll("option")
-    nbLignes.forEach( (nbLigne) => {
-        console.log(nbLigne.value)
-        let width = nbligne.value
-        console.log(width)
-        // switch (nbligne.textContent){
-        //     case "2" : 
-        //     placeForImg.style.width = 
-        //     break
-            
-        //     case "3" : 
-        //     placeForImg.style.width = 
-        //     break
-            
-        //     case "4" : 
-        //     placeForImg.style.width = 
-        //     break
-            
-        //     case "5" : 
-        //     placeForImg.style.width = 
-        //     break
-        //     case "6" : 
-        //     placeForImg.style.width = 
-        //     break
-            
-        // }
+    }
+
+}
+
+
+function nbLignes(){
+    const placeForImg = document.getElementById("sizer");
+    const selectNumber = document.getElementById("numberSelect");
+    const options = Array.from(selectNumber.options)
+    options.forEach( (option) => {
+        // console.log(nbLigne.value)
+        console.log(option.textContent)
+        switch (option.textContent){
+            case "2" : 
+            placeForImg.style.display = "flex"
+            placeForImg.style.flexWrap = "wrap"
+            placeForImg.style.width = "70%"
+            placeForImg.style.height = "440px";
+            break;
+        
+            case "3" :
+            placeForImg.style.display = "flex"
+            placeForImg.style.flexWrap = "wrap"
+            placeForImg.style.width = "70%"
+            placeForImg.style.height = "660px";
+            break          
+            case "4" :
+            placeForImg.style.display = "flex"
+            placeForImg.style.flexWrap = "wrap"
+            placeForImg.style.width = "70%"
+            placeForImg.style.height = "880px";
+            break          
+            case "5" :
+            placeForImg.style.display = "flex"
+            placeForImg.style.flexWrap = "wrap"
+            placeForImg.style.width = "70%"
+            placeForImg.style.height = "1100px";
+            break          
+            case "6" :
+            placeForImg.style.display = "flex"
+            placeForImg.style.flexWrap = "wrap"
+            placeForImg.style.width = "70%"
+            placeForImg.style.height = "1320px";
+            break          
+
+        }
         
     })
 
 }
+
 
 // addCard()
 // function selectedNbImg
