@@ -42,13 +42,15 @@ const prenom = document.querySelector(".prenom");
 const nom = document.querySelector(".nom");
 const selectNumber = document.getElementById("numberSelect");
 const options = selectNumber.options;
-const selectLignes = Array.from(selectNumber.options)
+const selectLignes = document.querySelectorAll("option")
 
 console.log(selectLignes)
-// for (let option of options) {
-//     console.log(option.textContent)
-// }
 
+selectLignes.forEach( () => {
+    console.log(selectLignes.value)
+    // console.log(options.values)
+
+})
 
 // console.log(placeForImg)
 // console.log(selectNumber)
@@ -93,84 +95,7 @@ function addCard () {
     }
 
 }
-let test2
-// const test = document.querySelectorAll("option")
 
-selectLignes.forEach( () => {
-        test2 = e.target.value
-        console.log(test2)
-        placeForImg.style.width = test2
-        console.log(e)
-});
+function dimensionSizer () {
 
-console.log(selectLignes)
-
-// function nbLignes(){
-//     const placeForImg = document.getElementById("sizer");
-//     const selectNumber = document.getElementById("numberSelect");
-//     const options = Array.from(selectNumber.options)
-//     options.forEach( (option) => {
-//         console.log(option.textContent)
-//         if (option.textContent === "2"){
-//             placeForImg.style.display = "flex"
-//             placeForImg.style.flexWrap = "wrap"
-//             placeForImg.style.width = "440px"
-//         // placeForImg.style.height = "440px";
-//         } else if (option.textContent === "3"){
-//             placeForImg.style.display = "flex"
-//             placeForImg.style.flexWrap = "wrap"
-//             placeForImg.style.width = "660px"
-//         } else if (option.textContent === "3"){
-//             placeForImg.style.display = "flex"
-//             placeForImg.style.flexWrap = "wrap"
-//             placeForImg.style.width = "880px"
-//     }        
-//     })
-
-// }
-
-
-// selectLignes.forEach((option) => {
-//     option.addEventListener("click", nbLignes);
-//   });
-
-//   selectLignes.addEventListener("click", () => {
-//     option.forEach( () => {
-//         nbLignes()    
-//     })
-//   })
-//   switch (option.textContent){
-//     case "2" : 
-//     placeForImg.style.display = "flex"
-//     placeForImg.style.flexWrap = "wrap"
-//     // placeForImg.style.width = "70%"
-//     placeForImg.style.height = "440px";
-//     break;
-
-//     case "3" :
-//     placeForImg.style.display = "flex"
-//     placeForImg.style.flexWrap = "wrap"
-//     // placeForImg.style.width = "70%"
-//     placeForImg.style.height = "660px";
-//     break          
-//     case "4" :
-//     placeForImg.style.display = "flex"
-//     placeForImg.style.flexWrap = "wrap"
-//     // placeForImg.style.width = "5%"
-//     placeForImg.style.height = "880px";
-//     break          
-//     case "5" :
-//     placeForImg.style.display = "flex"
-//     placeForImg.style.flexWrap = "wrap"
-//     // placeForImg.style.width = "50%"
-//     placeForImg.style.height = "1100px";
-//     break          
-//     case "6" :
-//     placeForImg.style.display = "flex"
-//     placeForImg.style.flexDirection = "column"
-//     placeForImg.style.flexWrap = "wrap"
-//     // placeForImg.style.width = "50%"
-//     placeForImg.style.height = "1320px";
-//     break          
-
-// }
+}
